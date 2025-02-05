@@ -244,8 +244,13 @@ function VoiceAssistant() {
         {
             command: [`${assistantName} Llámame *`, "Llámame *"],
             callback: (name) => {
-                setAssistantDialog('Muy bien, ' + name + '. Así lo haré.')
-                setUserAlias(', ' + name)
+                if (assistantName == "Ultrón") {
+                    setAssistantDialog('Un humano es un humano. Su nombre es indiferente.')
+                } else {
+                    setAssistantDialog('Muy bien, ' + name + '. Así lo haré.')
+                    setUserAlias(', ' + name)
+                }
+                
             }
         },
 
